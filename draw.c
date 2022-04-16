@@ -6,7 +6,7 @@
 /*   By: fcassand <fcassand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/24 01:36:52 by fcassand          #+#    #+#             */
-/*   Updated: 2022/04/05 04:02:57 by fcassand         ###   ########.fr       */
+/*   Updated: 2022/04/16 01:23:11 by fcassand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,14 +55,16 @@ void	brosenham(float x0, float y0, float x1, float y1, fdf *data)
 
 	z0 = data->z_matrix[(int)y0][(int)x0];
 	z1 = data->z_matrix[(int)y1][(int)x1];
+	z0 *= data->shift_z;
+	z1 *= data->shift_z;
 	x1 *= data->scale;
 	x0 *= data->scale;
 	y0 *= data->scale;
 	y1 *= data->scale;
-	x0 = (x0 - y0) * cos(0.8);
-	y0 = (x0 + y0) * sin(0.8) - z0;
-	x1 = (x1 - y1) * cos(0.8);
-	y1 = (x1 + y1) * sin(0.8) - z1;
+	x0 = (x0 - y0) * cos(data->alpha);
+	y0 = (x0 + y0) * sin(data->alpha) - z0;
+	x1 = (x1 - y1) * cos(data->alpha);
+	y1 = (x1 + y1) * sin(data->alpha) - z1;
 	y0 += data->shift_y;
 	y1 += data->shift_y;
 	x0 += data->shift_x;

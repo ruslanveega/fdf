@@ -6,7 +6,7 @@
 /*   By: fcassand <fcassand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/24 01:37:10 by fcassand          #+#    #+#             */
-/*   Updated: 2022/04/05 03:59:09 by fcassand         ###   ########.fr       */
+/*   Updated: 2022/04/16 01:14:56 by fcassand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ typedef struct fdf
 	int	shift_y;
 	int	shift_x;
 	int	shift_z;
+	double	alpha;
 
 	void	*mlx_ptr;
 	void	*win_ptr;
