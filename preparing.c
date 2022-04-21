@@ -6,13 +6,13 @@
 /*   By: fcassand <fcassand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/21 02:38:00 by fcassand          #+#    #+#             */
-/*   Updated: 2022/04/21 02:43:50 by fcassand         ###   ########.fr       */
+/*   Updated: 2022/04/22 01:55:51 by fcassand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
 
-void	rotate_y(fdf *data, int **z0, int **z1)
+void	rotate_y(t_fdf *data, int **z0, int **z1)
 {
 	float	previous_x;
 
@@ -24,7 +24,7 @@ void	rotate_y(fdf *data, int **z0, int **z1)
 	**z1 = -previous_x * sin(data->rot_y) + **z1 * cos(data->rot_y);
 }
 
-void	rotate_x(fdf *data, int **z0, int **z1)
+void	rotate_x(t_fdf *data, int **z0, int **z1)
 {
 	float	previous_y;
 
@@ -36,7 +36,7 @@ void	rotate_x(fdf *data, int **z0, int **z1)
 	**z1 = -previous_y * sin(data->rot_x) + **z1 * cos(data->rot_x);
 }
 
-void	rotate_z(fdf *data)
+void	rotate_z(t_fdf *data)
 {
 	float	previous_x;
 	float	previous_y;
@@ -51,7 +51,7 @@ void	rotate_z(fdf *data)
 	data->y1 = previous_x * sin(data->rot_z) + previous_y * cos(data->rot_z);
 }
 
-void	data_prepare(int *z1, int *z0, fdf *data)
+void	data_prepare(int *z1, int *z0, t_fdf *data)
 {
 	*z0 *= data->shift_z;
 	*z1 *= data->shift_z;
@@ -68,7 +68,7 @@ void	data_prepare(int *z1, int *z0, fdf *data)
 	data->x1 += data->shift_x;
 }
 
-void	color(int z0, int z1, fdf *data)
+void	color(int z0, int z1, t_fdf *data)
 {
 	if (z0 || z1)
 		data->color = 0xe80c0c;

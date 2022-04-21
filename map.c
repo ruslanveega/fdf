@@ -6,7 +6,7 @@
 /*   By: fcassand <fcassand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/24 01:36:52 by fcassand          #+#    #+#             */
-/*   Updated: 2022/04/21 02:46:48 by fcassand         ###   ########.fr       */
+/*   Updated: 2022/04/22 01:55:26 by fcassand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ int	check_elem(char *num)
 	return (number);
 }
 
-void	check_widht(fdf *data, int fd)
+void	check_widht(t_fdf *data, int fd)
 {
 	int		width;
 	char	**line;

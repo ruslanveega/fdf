@@ -6,13 +6,13 @@
 /*   By: fcassand <fcassand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/21 03:13:31 by fcassand          #+#    #+#             */
-/*   Updated: 2022/04/21 03:14:03 by fcassand         ###   ########.fr       */
+/*   Updated: 2022/04/22 02:01:47 by fcassand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
 
-void	shift_scale(int key, fdf *data)
+void	shift_scale(int key, t_fdf *data)
 {
 	if (key == 126)
 		data->shift_y -= 10;
@@ -32,7 +32,7 @@ void	shift_scale(int key, fdf *data)
 		data->scale -= 1;
 }
 
-void	projection(int key, fdf *data)
+void	projection(int key, t_fdf *data)
 {
 	if (key == 6)
 	{
@@ -54,25 +54,25 @@ void	projection(int key, fdf *data)
 	}
 }
 
-void	camera(int key, fdf *data)
+void	camera(int key, t_fdf *data)
 {
 	if (key == 0)
-		data->rot_y += 0.05;
-	else if (key == 2)
 		data->rot_y -= 0.05;
+	else if (key == 2)
+		data->rot_y += 0.05;
 	else if (key == 13)
-		data->rot_x += 0.05;
-	else if (key == 1)
 		data->rot_x -= 0.05;
+	else if (key == 1)
+		data->rot_x += 0.05;
 	else if (key == 12)
-		data->rot_z -= 0.05;
-	else if (key == 14)
 		data->rot_z += 0.05;
+	else if (key == 14)
+		data->rot_z -= 0.05;
 	else
 		projection(key, data);
 }
 
-int	deal_key(int key, fdf *data)
+int	deal_key(int key, t_fdf *data)
 {
 	printf("%d\n", key);
 	if (key > 68)

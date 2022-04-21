@@ -6,7 +6,7 @@
 /*   By: fcassand <fcassand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/25 03:03:32 by fcassand          #+#    #+#             */
-/*   Updated: 2022/04/21 02:44:49 by fcassand         ###   ########.fr       */
+/*   Updated: 2022/04/22 01:55:06 by fcassand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void	free_char(char	**str)
 	free(str);
 }
 
-void	free_fdf(fdf *data)
+void	free_fdf(t_fdf *data)
 {
 	int	i;
 	int	**matrix;

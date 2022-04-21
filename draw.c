@@ -6,7 +6,7 @@
 /*   By: fcassand <fcassand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/24 01:36:52 by fcassand          #+#    #+#             */
-/*   Updated: 2022/04/21 02:58:47 by fcassand         ###   ########.fr       */
+/*   Updated: 2022/04/22 01:54:59 by fcassand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	max_mod(float x, float y)
 	return ((int)y);
 }
 
-void	for_bros(int x, int y, fdf *data)
+void	for_bros(int x, int y, t_fdf *data)
 {
 	if (x < data->width - 1)
 	{
@@ -43,7 +43,7 @@ void	for_bros(int x, int y, fdf *data)
 	}
 }
 
-void	draw_map(fdf *data)
+void	draw_map(t_fdf *data)
 {
 	int	x;
 	int	y;
@@ -61,7 +61,7 @@ void	draw_map(fdf *data)
 	}
 }
 
-void	brosenham(fdf *data)
+void	brosenham(t_fdf *data)
 {
 	float	x_step;
 	float	y_step;
