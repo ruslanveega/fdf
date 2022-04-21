@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fdf.c                                              :+:      :+:    :+:   */
+/*   fill_data.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fcassand <fcassand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/24 01:36:52 by fcassand          #+#    #+#             */
-/*   Updated: 2022/03/26 03:05:02 by fcassand         ###   ########.fr       */
+/*   Updated: 2022/04/21 02:48:50 by fcassand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,12 @@ int	get_hight(char *map)
 
 	hight = 0;
 	fd = open(map, O_RDONLY, 0);
-	while ((line = get_next_line(fd)))
+	line = get_next_line(fd);
+	while (line)
 	{
 		hight++;
 		free(line);
+		line = get_next_line(fd);
 	}
 	return (hight);
 	close(fd);
@@ -81,12 +83,12 @@ void	read_map(char *map, fdf *data)
 
 	data->height = get_hight(map);
 	data->width = get_widht(map);
-	data->z_matrix = (int **)malloc(sizeof(int*) * (data->height + 1));
+	data->z_matrix = (int **)malloc(sizeof(int *) * (data->height + 1));
 	if (!data->z_matrix)
 		error("allocaotion error");
 	i = 0;
 	while (i <= data->height)
-		data->z_matrix[i++] = (int*)malloc(sizeof(int) * (data->width + 1));
+		data->z_matrix[i++] = (int *)malloc(sizeof(int) * (data->width + 1));
 	fd = open(map, O_RDONLY, 0);
 	check_widht(data, fd);
 	close(fd);

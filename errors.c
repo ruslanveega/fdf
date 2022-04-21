@@ -6,7 +6,7 @@
 /*   By: fcassand <fcassand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/25 03:03:32 by fcassand          #+#    #+#             */
-/*   Updated: 2022/03/25 03:03:59 by fcassand         ###   ########.fr       */
+/*   Updated: 2022/04/21 02:44:49 by fcassand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,6 @@ void	free_fdf(fdf *data)
 	int	**matrix;
 
 	matrix = data->z_matrix;
-
 	i = 0;
 	while (i <= data->height)
 	{

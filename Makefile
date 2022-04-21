@@ -1,7 +1,7 @@
 NAME		=	fdf
 
 SRCS_FILES	= fdf.c errors.c map.c fill_data.c \
-				draw.c
+				draw.c preparing.c keys.c
 
 SRCS		= 	$(SRCS_FILES)
 SRCS_B		= 	$(SRCS_B_FILES)
