@@ -6,7 +6,7 @@
 /*   By: fcassand <fcassand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/24 01:36:52 by fcassand          #+#    #+#             */
-/*   Updated: 2022/04/21 02:48:50 by fcassand         ###   ########.fr       */
+/*   Updated: 2022/04/22 02:16:16 by fcassand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ int	get_widht(char *map)
 	return (widht);
 }
 
-void	fill_data(fdf *data, int fd)
+void	fill_data(t_fdf *data, int fd)
 {
 	char	*line;
 	char	**nums;
@@ -76,7 +76,7 @@ void	fill_data(fdf *data, int fd)
 	}
 }
 
-void	read_map(char *map, fdf *data)
+void	read_map(char *map, t_fdf *data)
 {
 	int		fd;
 	int		i;
